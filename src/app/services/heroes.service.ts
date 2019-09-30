@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class HeroesService {
 
-    private heroes: any[] = [
+    private heroes: Heroe[] = [
         {
           nombre: "Aquaman",
           bio: "El poder más reconocido de Aquaman es la capacidad telepática para comunicarse con la vida marina, la cual puede convocar a grandes distancias.",
@@ -60,10 +60,19 @@ export class HeroesService {
               console.log('Servicio listo para usar!!');
           }
 
-          getHeroes() {
+          getHeroes():Heroe[] {
               return this.heroes;
           }
 
+        }
 
 
-}
+
+export interface Heroe {
+          nombre: string;
+          bio: string;
+          img: string;
+          aparicion: string;
+          casa: string;
+
+        }
