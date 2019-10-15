@@ -13,8 +13,9 @@
 </div>
 
 <div class="card-columns">
+    <app-heroe-tarjeta [heroe]="heroe" [index]="heroe.idx" *ngFor="let heroe of heroes"></app-heroe-tarjeta>
 
-    <div class="card animated fadeIn fast" *ngFor="let heroe of heroes, let i = index">
+    <!-- <div class="card animated fadeIn fast" *ngFor="let heroe of heroes, let i = index">
         <img class="card-img-top img-fluid" [src]="heroe.img" [alt]="heroe.nombre">
         <div class="card-body">
             <h5 class="card-title">{{ heroe.nombre }}</h5>
@@ -25,10 +26,9 @@
                 Ver mas..
             </button>
 
-            <!-- redireccionamiento con routerLink -->
-            <!-- <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary">Ver mas link...</a> -->
+            redireccionamiento con routerLink -->
+    <!-- <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary">Ver mas link...</a> 
         </div>
-    </div>
-
+    </div> -->
 
 </div>

@@ -73,11 +73,20 @@ export class HeroesService {
 
             let heroesArr: Heroe[] = [];
 
-            this.heroes.forEach(heroe => {
-              if (heroe.nombre.toLocaleLowerCase().indexOf(argumento) >= 0) {
-                heroesArr.push(heroe);
+            // this.heroes.forEach(heroe => {
+              // if (heroe.nombre.toLocaleLowerCase().indexOf(argumento) >= 0) {
+              //   heroesArr.push(heroe);
+              // }
+            // });
+
+            for (let i = 0; i < this.heroes.length; i++) {
+
+              this.heroes[i].idx = i;
+
+              if (this.heroes[i].nombre.toLocaleLowerCase().indexOf(argumento) >= 0) {
+                heroesArr.push(this.heroes[i]);
               }
-            });
+            }
 
             return heroesArr;
 
@@ -93,5 +102,5 @@ export interface Heroe {
           img: string;
           aparicion: string;
           casa: string;
-
+          idx?: number;
         }
